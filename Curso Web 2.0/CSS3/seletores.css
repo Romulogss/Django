@@ -1,0 +1,101 @@
+ /* Seletor universal*/
+ * {
+    font-weight: bold;
+}
+
+/* Seletor do tipo atributo ou seletor de tipo*/
+h1 {
+    color: green;
+}
+
+/* Seletor do tipo classe*/
+.meuTituloComClass {
+    color: blue;
+}
+
+/* Seletor do tipo ID */
+#meuTituloComID {
+    color: yellow;
+}
+
+/* Seleciona elementos desabilitados */
+[disabled] {
+    color: grey;
+}
+
+/* Seleciona elementos setados para Espanhol */
+[lang|=es] {
+    color: red;
+}
+
+/* Seleciona elementos do tipo button */
+[type='button'] {
+    background-color: green;
+}
+
+/* Seleciona elementos do tipo text */
+[type='text'] {
+    background-color: blue;
+}
+
+/* Seleciona elementos com a classe key, é o mesmo que .key */
+[class*=key] {
+    color: yellow;
+}
+
+/*
+    ~ exato
+    * contem
+    $ termina com
+    ^ começa com
+*/
+
+/*Seleciona elementos com titulo que contem a palavra exemple*/
+[title ~= Example i] {
+    color: red;
+}
+
+/*Seleciona todos os links*/
+a {
+    color: green;
+}
+
+/* Seleciona todos os links do tipo HTTPS*/
+a[href^="https://"] {
+    color: blue;
+}
+
+/* Seleciona todas as imagens com extensão .png*/
+img[src$=".png"] {
+    transform: rotate(110deg);
+}
+
+/* Selecionando um stado via pseudo elemento*/
+[type="text"]:hover {
+    background-color: pink;
+}
+
+/* */
+img[src$=".png"]:hover {
+    transform: rotate(150deg);
+}
+
+li:first-child,
+li:last-child {
+    color: yellow;
+}
+
+p:last-of-type {
+    font-size: 50px;
+}
+
+p.meuTituloComClass {
+    font-size: 14px;
+}
+
+.c1,
+.c2 {
+    color: pink;
+    font-size: 20;
+    border: 1px solid;
+}
