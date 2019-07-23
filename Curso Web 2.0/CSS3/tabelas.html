@@ -1,12 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tabelas</title>
+    <style>
+        #demo-table {
+            font: 100% arial sans-serif;
+            background-color: #efe;
+            border-collapse: collapse;
+            empty-cells: show;
+            border: 1px solid #7a7;
+            width: 660px;
+            height: 390px;
+        }
+
+        #demo-table>caption {
+            caption-side: bottom;
+            text-align: right;
+            font-size: 100%;
+            border-top: .3em solid #4ca;
+            margin-top: .5em;
+        }
+
+        /* basic shared rules */
+        #demo-table td {
+            text-align: left;
+            padding-right: .5em;
+        }
+
+        #demo-table th {
+            text-align: left;
+            padding-left: .5em;
+            font-weight: inherit;
+            border-bottom: solid 1px, rgb(199, 199, 199)
+        }
+
+        /* header */
+        #demo-table>thead>tr:first-child>th {
+            color: blue;
+        }
+
+        #demo-table>thead>tr+tr>th {
+            font-style: italic;
+            color: gray;
+        }
+
+        /* fix size of superscript */
+        #demo-table sup {
+            font-size: 75%;
+        }
+
+        /* body */
+        #demo-table td {
+            background-color: #cef;
+            padding: .5em .5em .5em 1em;
+            
+        }
+
+        #demo-table tbody td {
+            border-bottom: 1px solid #7a7;
+            border-right: 1px solid #7a7;
+        }
+
+        #demo-table tbody th:after {
+            content: ":";
+        }
+
+        /* footer */
+        #demo-table tfoot {
+            font-weight: bold;
+            font-weight: inherit;
+        }
+
+        #demo-table tfoot th {
+            color: blue;
+        }
+
+        #demo-table tfoot th:after {
+            content: ":";
+        }
+
+        #demo-table>tfoot td {
+            background-color: #cee;
+        }
+
+        #demo-table>tfoot>tr:first-child td {
+            border-top: .2em solid #7a7;
+        }
+        #demo-table>tfoot>tr:last-child td {
+            background-color: rgb(241, 252, 241);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <table id="demo-table">
+        <caption>Oceanos</caption>
+
+        <thead>
+            <tr>
+                <th></th>
+                <th>Área</th>
+                <th>Profundidade Média</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>milhões de km<SUP>2</SUP></th>
+                <th>m</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Ártico</th>
+                <td>13,000</td>
+                <td>1,200</td>
+            </tr>
+            <tr>
+                <th>Atlântico</th>
+                <td>87,000</td>
+                <td>3,900</td>
+            </tr>
+            <tr>
+                <th>Pacífico</th>
+                <td>180,000</td>
+                <td>4,000</td>
+            </tr>
+            <tr>
+                <th>Índico</th>
+                <td>75,000</td>
+                <td>3,900</td>
+            </tr>
+            <tr>
+                <th>Antártico</th>
+                <td>20,000</td>
+                <td>4,500</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <td>361,000</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Média</th>
+                <td>72,000</td>
+                <td>3,800</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+
+    </table>
 </body>
+
 </html>
