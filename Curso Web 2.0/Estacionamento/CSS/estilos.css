@@ -1,0 +1,114 @@
+body {
+    font-family: Helvetica, Arial;
+}
+
+header {
+    float: left;
+    background-color: #79bd9a;
+    width: 100%;
+}
+
+header p {
+    float: right;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: white;
+    background: #0b486b;
+    padding: 10px 5px;
+}
+
+nav {
+    float: right;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    float: left;
+    padding: 10px;
+}
+
+footer {
+    background-color: #3b8686;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+#logo {
+    float: left;
+    width: 40%;
+    height: 40%;
+    display: block;
+}
+
+#menu-icon {
+    display: hidden;
+    width: 40px;
+    height: 40px;
+    background: url(../src/botao-de-menu.png) center;
+}
+
+@media only screen and (max-width: 480px) {
+    #menu-icon {
+		display:inline-block;
+	}
+
+	nav ul{ 
+		display: none;
+		position: absolute;
+		right: 20px;
+		top: 60px;
+		padding: 20px;
+		background: #fff;
+		width: 20%;
+	}
+
+	nav li {
+		text-align: left;
+		width: 100%;
+		padding: 10px 0px;
+		margin: 0;
+	}
+
+	nav:hover ul {
+		display: block;
+	}
+
+	nav li a {
+		color: #3B8686;
+	}
+
+	nav:hover ul{
+		display: block;
+	}
+
+    p {
+        text-align: left;
+    }
+
+    .depoimentos {
+        box-shadow: 10px 10px 5px #888;
+        border-radius: 5px;
+        width: 95%;
+    }
+
+    nav#nav-footer {
+        display: none;
+    }
+
+    #copyright p {
+        text-align: center;
+    }
+}
