@@ -1,0 +1,49 @@
+body {
+    /*font: 20px "Comic Sans MS", cursive;*/
+    font-size: 100%;
+}
+h1 {
+    font-style: italic;
+    font-size: 20px;
+    color: red;
+}
+h2 {
+    font-weight: normal;
+    font-size: 3.5em;
+    /*
+        smaller
+        larger
+        150%
+        1.5em <<
+        15px;
+        1em= 16px;
+        14/16 = 0.875em
+    */
+}
+h3 {
+    text-decoration: underline;
+    text-align: right;
+    /*line-through*/
+}
+p {
+    text-align: center;
+    text-indent: 100px;
+    letter-spacing: 1px;
+    line-height: 50px;
+    word-spacing: 10px;
+}
+span {
+    text-transform: lowercase;
+}
+a {
+    text-decoration: line-through;
+}
+div {
+    direction: rtl;
+}
+.px {
+    font-size: 14px;
+}
+.em {
+    font-size: 0.875em;
+}
