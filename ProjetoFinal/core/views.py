@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PessoaForm, VeiculoForm
 from .models import (Pessoa, Veiculo, MovimentoRotativo,
                      Mensalista, MovimentoMensalista)
+from .tabelas import TabelaPessoa
+from django_tables2 import RequestConfig
 
 
 # Create your views here.
@@ -12,8 +14,11 @@ def home(request):
 
 # CLeintes
 def all_pessoas(request):
-    pessoas = Pessoa.objects.all()
-    return render(request, 'core/pessoas.html', {'pessoas': pessoas})
+    # pessoas = Pessoa.objects.all()
+    # return render(request, 'core/pessoas.html', {'pessoas': pessoas})
+    tabela = TabelaPessoa(Pessoa.objects.all())
+    RequestConfig(request).configure(tabela)
+    return render(request, 'core/pessoas.html', {'pessoas': tabela})
 
 
 def nova_pessoa(request):
