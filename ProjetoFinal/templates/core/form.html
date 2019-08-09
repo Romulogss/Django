@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-{% load crispy_forms_tags %}
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet"
-	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<title>Nova Pessoa</title>
-</head>
-<body>
-<main class="container">
+{% extends 'core/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
 	<div class="row">
-		<div class="col-6">
+		<div class="col">
 			<form method="POST">
 				{% csrf_token %}
 				{{ form|crispy }}
 				<button type="submit" class="btn btn-primary">Salvar</button>
-				<a href="{% url 'core_pessoas' %}">
+				<a href="{{ voltar }}">
 					<button type="button" class="btn btn-danger">Voltar</button>
 				</a>
 			</form>
 		</div>
 	</div>
-</main>
-</body>
-</html>
+{% endblock %}

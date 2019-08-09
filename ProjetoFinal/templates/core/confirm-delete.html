@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+	<div class="row align-items-center">
+		<div class="col" style="text-align: center">
+			<h5>Tem certeza que deseja excluir {{ obj }}?</h5>
+			<form method="POST" class="form-group">
+				{% csrf_token %}
+				<button type="submit" class="btn btn-danger">Sim</button>
+				<a href="{{ voltar }}">
+				<button type="button" class="btn btn-primary">Não</button>
+			</a>
+			</form>
+
+		</div>
+	</div>
+{% endblock %}

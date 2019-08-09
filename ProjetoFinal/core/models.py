@@ -54,6 +54,7 @@ class MovimentoRotativo(models.Model):
             return self.valor_hora * self.horas_total()
         except Exception:
             pass
+
     def __str__(self):
         return self.veiculo.placa
 
@@ -65,6 +66,7 @@ class Mensalista(models.Model):
 
     def __str__(self):
         return self.veiculo.placa
+
 
 class MovimentoMensalista(models.Model):
     mensalista = models.ForeignKey(Mensalista, models.CASCADE)
