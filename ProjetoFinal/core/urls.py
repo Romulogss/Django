@@ -10,7 +10,7 @@ from .views import (
     all_mensalistas
 )
 
-urls = [
+urlpatterns = [
     path('', home, name='core_home'),
     ClienteURL.get_todos(),
     ClienteURL.update_pessoa(),

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{ object.first_name }}{% endblock %}
+{% block main %}
+	<p>
+		{{ object.first_name }} {{ object.last_name }}
+	</p>
+	<p>
+		{{ object.age }}
+	</p>
+{% endblock %}

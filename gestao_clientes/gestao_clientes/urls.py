@@ -1,7 +1,7 @@
-"""estacionamento URL Configuration
+"""gestao_clientes URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from clientes import urls as clientes_urls
+from home import urls as home_urls
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
-from core.urls import urlpatterns as core_urls
-from website.urls import urlpatterns as website_urls
 
 urlpatterns = [
-    path('sistema/', include(core_urls)),
-    path('', include(website_urls)),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include(home_urls)),
+    path('clientes/', include(clientes_urls)),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
