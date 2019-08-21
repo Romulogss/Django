@@ -3,7 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
+    CreateView,
 )
+from django.utils import timezone
 from .models import Person
 from .forms import PersonForm
 
@@ -53,3 +55,14 @@ class PersonList(ListView):
 
 class PersonDetail(DetailView):
     model = Person
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['agora'] = timezone.now()
+        return context
+
+
+class PersonCreate(CreateView):
+    model = Person
+    fields = '__all__'
+    success_url = '../list'
