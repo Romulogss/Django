@@ -4,8 +4,10 @@ from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
+    UpdateView,
+    DeleteView,
 )
-from django.utils import timezone
+from django.urls import reverse_lazy
 from .models import Person
 from .forms import PersonForm
 
@@ -46,7 +48,7 @@ def persons_delete(request, id):
         person.delete()
         return redirect('person_list')
 
-    return render(request, 'clientes/person_delete_confirm.html', {'person': person})
+    return render(request, 'clientes/person_confirm_delete.html', {'person': person})
 
 
 class PersonList(ListView):
@@ -56,13 +58,25 @@ class PersonList(ListView):
 class PersonDetail(DetailView):
     model = Person
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['agora'] = timezone.now()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['agora'] = timezone.now()
+    #     return context
 
 
 class PersonCreate(CreateView):
     model = Person
     fields = '__all__'
-    success_url = '../list'
+    success_url = reverse_lazy('person_list')
+
+
+class PersonUpdate(UpdateView):
+    model = Person
+    fields = '__all__'
+    success_url = reverse_lazy('person_list')
+    template_name = 'clientes/person_form.html'
+
+
+class PersonDelete(DeleteView):
+    model = Person
+    success_url = reverse_lazy('person_list')

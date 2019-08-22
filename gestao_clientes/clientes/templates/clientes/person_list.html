@@ -33,24 +33,33 @@
 				<tbody style="text-align: center">
 				{% for person in object_list %}
 					<tr>
-						<td><a href="{% url 'person_detail' person.id %}">{{ person.first_name }} {{ person.last_name }}</a></td>
+						<td>
+							<a href="{% url 'person_detail' person.id %}">{{ person.first_name }} {{ person.last_name }}</a>
+						</td>
 						<td>{{ person.age }}</td>
 						<td>{{ person.bio }}</td>
 						<td>
 							<a href="{% url 'persons_delete' person.id %}">
 								<i class="fa fa-trash" aria-hidden="true"></i>
 							</a>
+							<a href="{% url 'persons_update' person.id %}">
+								<i class="fa fa-edit" aria-hidden="true"></i>
+							</a>
 						</td>
 					</tr>
 				{% endfor %}
 				</tbody>
 			</table>
-			<br>
-			<a href="{% url 'person_new' %}" class="btn btn-primary"> Novo cliente</a>
-
 		</div>
 	</div>
-
+	<hr>
+	<div class="row">
+		<div class="col" style="text-align: center">
+			<a href="{% url 'person_new' %}">
+				<i class="fa fa-user-plus btn btn-primary" aria-hidden="true"></i>
+			</a>
+		</div>
+	</div>
 
 {% endblock %}
 
